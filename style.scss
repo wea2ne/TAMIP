@@ -1,0 +1,317 @@
+@font-face {
+  font-family: typewriter;
+  src: url("./typewriter/typewcond_regular.otf");
+}
+$primary: #236db3;
+$secondary: #6dc0ff;
+$tertiary: #ffd39f;
+  
+  $chicken: #eaed6b;
+  $beef: #f76262;
+  $pork: rgb(237, 167, 219);
+  $fish: #afd7f7;
+  $veggie: #7cd67c;
+  $dessert: #bda4f7;
+  $card__border-radius: 20px;
+  $card__modal-max-width: 500px;
+  $card__modal-height: 90vh;
+  $card__modal-header-height: 300px;
+  
+  html, body {
+    font-family: 'typewriter', sans-serif;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  .no-scroll {
+    overflow: hidden;
+  }
+  
+  .container {
+    background: $tertiary;
+    padding: 2em;
+    min-height: 100vh;
+    display: flex;
+  }
+  
+  .icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+  }
+  
+  .blend-image {
+    filter: brightness(250%) grayscale(100%);
+    mix-blend-mode: screen;
+  }
+  
+  .center-image {
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    object-fit: cover;
+  }
+  
+  .slick-slide {
+    padding: 2em .5em;
+  }
+  
+  .card-slider {
+    width: 100%;
+  }
+  
+  .card {
+    background: #fff;
+    display: flex;
+    padding: 2em;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    border-radius: $card__border-radius;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    height: 350px;
+    box-shadow: 0 30px 50px -25px rgba(0,0,0,0.25);
+    > * {
+      transition: opacity 350ms;
+    }
+    
+    &--opened > *{
+      opacity: 0;
+    }
+  }
+  
+  .card__background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    background: #fff;
+    z-index: -1;
+    text-align: left;
+    
+    img {
+      @extend .center-image;
+      @extend .blend-image;
+    }
+    
+    &::after {
+      content:'';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(to top, #fff 0, rgba(255,255,255,0) 70%);
+    }
+  }
+  
+  .card__category__chicken {
+    text-transform: uppercase;
+    color: #fff;
+    background: $chicken;
+    font-size: 0.85em;
+    font-weight: 600;
+    padding: 0.2em 0.5em 0.25em;
+  }
+  
+  .card__category__beef {
+    text-transform: uppercase;
+    color: #fff;
+    background: $beef;
+    font-size: 0.85em;
+    font-weight: 600;
+    padding: 0.2em 0.5em 0.25em;
+  }
+
+  .card__category__pork {
+    text-transform: uppercase;
+    color: #fff;
+    background: $pork;
+    font-size: 0.85em;
+    font-weight: 600;
+    padding: 0.2em 0.5em 0.25em;
+  }
+  
+  .card__category__fish {
+    text-transform: uppercase;
+    color: #fff;
+    background: $fish;
+    font-size: 0.85em;
+    font-weight: 600;
+    padding: 0.2em 0.5em 0.25em;
+  }
+  
+  .card__category__veggie {
+    text-transform: uppercase;
+    color: #fff;
+    background: $veggie;
+    font-size: 0.85em;
+    font-weight: 600;
+    padding: 0.2em 0.5em 0.25em;
+  }
+  
+  .card__category__dessert {
+    text-transform: uppercase;
+    color: #fff;
+    background: $dessert;
+    font-size: 0.85em;
+    font-weight: 600;
+    padding: 0.2em 0.5em 0.25em;
+  }
+  
+  .card__title {
+    text-transform: uppercase;
+    margin: 0.5em 0;
+    color: #2e5f80;
+  }
+  
+  .card__duration {
+    color: #6f7070;
+  }
+  
+  .modal-wrapper, .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  .modal-wrapper {
+    display: flex;
+  }
+  
+  .overlay {
+    background: rgba(0,0,0,0.5);
+    transition: opacity 150ms ease;
+  }
+  
+  .modal {
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    width: 90vw;
+    height: $card__modal-height;
+    max-width: $card__modal-max-width;
+    background: #fff;
+    border-radius: $card__border-radius;
+  }
+  
+  .modal__scroll-area {
+    height: inherit;
+    overflow: auto;
+    border-radius: inherit;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .modal__close-button {
+    background: transparent;
+    border: none;
+    margin-bottom: auto;
+    color: #ffd39f;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2em;
+    z-index: 2;
+  }
+  
+  .modal__header {
+    text-align: center;
+    position: relative;
+    display: flex;
+    padding: .5em;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: $card__modal-header-height;
+    z-index: 1;
+  }
+  
+  .modal__content {
+    padding: 2em;
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  [data-modal-state="closed"] {
+    .modal-wrapper {
+      pointer-events: none;
+    }
+    
+    .overlay {
+      pointer-events: none;
+    }
+    .modal {
+      opacity: 0;
+    }
+    .overlay {
+      opacity: 0;
+    }
+  }
+  
+  [data-modal-state="opening"],[data-modal-state="closing"]{
+    .modal__header, .modal__content, .modal__close-button {
+      opacity: 0;
+    }
+  }
+  
+  [data-modal-state="opening"]{
+    .overlay {
+      transition: opacity 500ms ease;
+    }
+  }
+  
+  [data-modal-state="closing"]{
+    .overlay {
+      opacity: 0;
+      transition: opacity 500ms ease;
+    }
+  }
+  
+  [data-modal-state="open"] {
+    .modal__header, .modal__content {
+      transition: opacity 450ms;
+    }
+  }
+
+body {
+  max-width: 1500px;
+  font-family: typewriter, serif;
+  background: $tertiary;
+}
+
+header {
+  background: $tertiary;
+  text-align: center;
+  color: $primary;
+
+  h1 {
+    font-size: 120px;
+    text-shadow: -2px 2px $secondary;
+    margin: unset;
+  }
+
+  h4{
+    font-size: 20px;
+    margin: unset;
+  }
+}
+///
+
+
+
+
