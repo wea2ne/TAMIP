@@ -1,3 +1,71 @@
+const data = [
+  {
+      "title": "MONGO STICKY RICE",
+      "tag": "Dessert",
+      "colorTag": "#bda4f7",
+      "time": "30 Minutes",
+      "ingredients": [
+          "2 blancs de poulet",
+          "1 oignon",
+          "4 càs de moutarde",
+          "1 cas de miel 1/2 jus de citron"
+      ],
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quo sint debitis? Dolorem est at voluptatum obcaecati tempore eaque perferendis. Totam at consectetur commodi porro atque eligendi rerum vero nam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quo sint debitis? Dolorem est at voluptatum obcaecati tempore eaque perferendis. Totam at consectetur commodi porro atque eligendi rerum vero nam?"
+  },
+  {
+      "title": "MONGO STICKY RICE",
+      "tag": "Dessert",
+      "colorTag": "#bda4f7",
+      "time": "30 Minutes",
+      "ingredients": [
+          "2 blancs de poulet",
+          "1 oignon",
+          "4 càs de moutarde",
+          "1 cas de miel 1/2 jus de citron"
+      ],
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quo sint debitis? Dolorem est at voluptatum obcaecati tempore eaque perferendis. Totam at consectetur commodi porro atque eligendi rerum vero nam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quo sint debitis? Dolorem est at voluptatum obcaecati tempore eaque perferendis. Totam at consectetur commodi porro atque eligendi rerum vero nam?"
+  },
+  {
+      "title": "MONGO STICKY RICE",
+      "tag": "Dessert",
+      "colorTag": "#bda4f7",
+      "time": "30 Minutes",
+      "ingredients": [
+          "2 blancs de poulet",
+          "1 oignon",
+          "4 càs de moutarde",
+          "1 cas de miel 1/2 jus de citron"
+      ],
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quo sint debitis? Dolorem est at voluptatum obcaecati tempore eaque perferendis. Totam at consectetur commodi porro atque eligendi rerum vero nam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quo sint debitis? Dolorem est at voluptatum obcaecati tempore eaque perferendis. Totam at consectetur commodi porro atque eligendi rerum vero nam?"
+  },
+  {
+      "title": "MONGO STICKY RICE",
+      "tag": "Dessert",
+      "colorTag": "#bda4f7",
+      "time": "30 Minutes",
+      "ingredients": [
+          "2 blancs de poulet",
+          "1 oignon",
+          "4 càs de moutarde",
+          "1 cas de miel 1/2 jus de citron"
+      ],
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quo sint debitis? Dolorem est at voluptatum obcaecati tempore eaque perferendis. Totam at consectetur commodi porro atque eligendi rerum vero nam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quo sint debitis? Dolorem est at voluptatum obcaecati tempore eaque perferendis. Totam at consectetur commodi porro atque eligendi rerum vero nam?"
+  },
+  {
+      "title": "MONGO STICKY RICE",
+      "tag": "Dessert",
+      "colorTag": "#bda4f7",
+      "time": "30 Minutes",
+      "ingredients": [
+          "2 blancs de poulet",
+          "1 oignon",
+          "4 càs de moutarde",
+          "1 cas de miel 1/2 jus de citron"
+      ],
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quo sint debitis? Dolorem est at voluptatum obcaecati tempore eaque perferendis. Totam at consectetur commodi porro atque eligendi rerum vero nam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quo sint debitis? Dolorem est at voluptatum obcaecati tempore eaque perferendis. Totam at consectetur commodi porro atque eligendi rerum vero nam?"
+  },
+]
+
 jQuery('.card-slider').slick({
     slidesToShow: 4,
     autoplay: true,
@@ -58,7 +126,6 @@ jQuery('.card-slider').slick({
       borderRadius: `${cardBorderRadius}px`
     }],options);
   }
-  
   cards.forEach((item)=>{
     item.addEventListener('click',(e)=>{
       jQuery('.card-slider').slick('slickPause');
@@ -100,3 +167,39 @@ jQuery('.card-slider').slick({
       animation.cancel();
     };
   });
+ 
+  <div class="card-wrapper"><article class="card">
+  <picture class="card__background">
+    <img src="">
+  </picture>
+  <div class="card__category__chicken"><a href="chicken.html"></a>
+    POULET
+  </div>
+  <h3 class="card__title">Poulet curry rouge</h3>
+  <div class="card__duration">
+    Durée : e.time
+  </div>
+  </article></div>
+
+data.map((e, i) => {
+  console.log(e)
+  document.createElement()
+//   let container = document.getElementsByClassName("card-slider")
+//   let div = document.createElement("div");
+//   let article = document.createElement("article");
+//   const tag = document.createTextNode(e.tag);
+//   let pic = document.createElement("picture");
+//   let div2 = document.createElement("div");
+//   let h3 = document.createElement("h3");
+//   const title = document.createTextNode(e.tag);
+//   let div3 = document.createElement("div");
+//   let div4 = document.createElement("div");
+//   div.appendChild(tag);
+
+// container[0].appendChild('<p>je sius la</p>')
+
+
+  // let titleButton = document.getElementsByClassName("card__title");
+  // console.log(titleButton[0].textContent)
+  // titleButton[0].textContent = e.title
+})
